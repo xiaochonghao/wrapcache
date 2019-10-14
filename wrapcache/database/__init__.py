@@ -196,10 +196,10 @@ class LruCacheDB(object):
 		"""Delete the item"""
 		node = self.get(key, None)
 		
-		if node == None:
+		if node is None:
 			value = default
 		else:
-			value = node
+			value = node.value
 		try:
 			del self[key]
 		except:
